@@ -1,4 +1,0 @@
-<!ELEMENT esempio (titolo, autore)>
-<!ELEMENT titolo (#PCDATA)>
-<!ELEMENT autore (#PCDATA)>
-<!ATTLIST esempio tipo CDATA #REQUIRED>
