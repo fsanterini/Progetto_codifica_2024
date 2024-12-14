@@ -7,13 +7,13 @@ codifica realizzata da Francesco santerini</br>
 
 java -cp "xerces-2_12_2/xml-apis.jar;xerces-2_12_2/xercesImpl.jar;xerces-2_12_2/xercesSamples.jar" dom.Counter -v Progetto_codifica.xml
 
-Risultato:
-```bash
-articoli.xml: 427;85;2 ms (3642 elems, 8364 attrs, 22198 spaces, 125349 chars)
-```
+Output:
 
-# <h3>Trasformazione in file HTML del file TEI-XML con il processore Saxon:</h3>
+Progetto_codifica.xml: 220;39;0 ms (1538 elems, 3418 attrs, 11468 spaces, 52337 chars)
+
+
+# <h3>Trasformazione tramite il processore Saxon del file TEI-XML in  file HTML:</h3>
 Comando da terminale:
-```bash
-.../SaxonHE12-4J$ java -jar saxon-he-12.4.jar -s:articoli.xml -xsl:transform.xsl -o:articoli.html
-```
+
+java -jar saxon-he-12.5.jar -s:../Progetto_codifica.xml -xsl:../Progetto_codifica.xsl -o:../output.html
+
