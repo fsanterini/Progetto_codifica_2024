@@ -9,7 +9,7 @@ java -cp "xerces-2_12_2/xml-apis.jar;xerces-2_12_2/xercesImpl.jar;xerces-2_12_2/
 ```
 Output:
 ```bash
-Progetto_codifica.xml: 220;39;0 ms (1538 elems, 3418 attrs, 11468 spaces, 52337 chars)
+Progetto_codifica.xml: 459;107;1 ms (1538 elems, 3415 attrs, 11468 spaces, 52338 chars)
 ```
 
 # <h3>Trasformazione tramite il processore Saxon del file TEI-XML in  file HTML:</h3>
