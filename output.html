@@ -1,0 +1,1706 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="progetto_codifica.css"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script><script type="text/javascript" src="progetto_codifica.js"></script><title>Progetto Codifica di Testi</title>
+   </head>
+   <body>
+      <div class="header"><a href="https://rassegnasettimanale.animi.it/"><img src="img_progetto_cod/logo_rassegna_settimanale.png" alt="logo_rassegna_settimanale" href="https://rassegnasettimanale.animi.it/" id="logo_rassegna"></a><h1>"La Rassegna Settimanale": articoli tratti da volume 2, fascicolo 22 e 36</h1>
+         <div class="autore_codifica">
+            <h3>Conversione TEI P5 a cura di Francesco Santerini<a href="https://github.com/francesanterini/CdT_2024"> Github del progetto</a></h3>
+         </div>
+      </div>
+      <div class="info_bibliografiche_e_tasti">
+         <div class="descrizione_bibliografica">
+            <h1>Descrizione bibliografica</h1>
+            <table>
+               <tr>
+                  <td>
+                     <div class="info_pubblicazione" id="informazioni_pubblicazioni">
+                        <h3 class="section-title">Pubblicazione</h3>
+                        <table>
+                           <tr>
+                              <td><strong>finanziato da:</strong></td>
+                           </tr>
+                           <tr>
+                              <td>Università di Pisa</td>
+                           </tr>
+                           <tr>
+                              <td><strong>luogo di pubblicazione</strong></td>
+                           </tr>
+                           <tr>
+                              <td>Pisa</td>
+                           </tr>
+                           <tr>
+                              <td><strong>data di pubblicazione</strong><br></td>
+                           </tr>
+                           <tr>
+                              <td>2024</td>
+                           </tr>
+                        </table>
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <div class="info_serie" id="informazioni_serie">
+                        <h3 class="section-title">Serie</h3>
+                        <table>
+                           <tr>
+                              <td><strong>titolo della serie</strong></td>
+                           </tr>
+                           <tr>
+                              <td>Edizione digitale della rivista "La Rassegna Settimanale di politica, scienze, lettere
+                                 ed arti"</td>
+                           </tr>
+                           <tr>
+                              <td><strong>informazioni sul coordinatore della codifica</strong></td>
+                           </tr>
+                           <tr>
+                              <td>Angelo Mario Del Grosso</td>
+                           </tr>
+                        </table>
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <div class="info_raccolta" id="informazioni_raccolta">
+                        <h3 class="section-title">Descrizione Fonte</h3>
+                        <table>
+                           <tr>
+                              <td><strong>Titolo della raccolta</strong></td>
+                           </tr>
+                           <tr>
+                              <td>La Rassegna Settimanale di Politica, Scienze, Lettere ed Arti</td>
+                           </tr>
+                           <tr>
+                              <td><strong>lingua degli articoli</strong></td>
+                           </tr>
+                           <tr>
+                              <td>Italiano</td>
+                           </tr>
+                           <tr>
+                              <td><strong>Fondata da</strong><br></td>
+                           </tr>
+                           <tr>
+                              <td>Leopoldo Franchetti Sydney Sonnino</td>
+                           </tr>
+                           <tr>
+                              <td><strong>luogo pubblicazione</strong><br></td>
+                           </tr>
+                           <tr>
+                              <td>Firenze</td>
+                           </tr>
+                           <tr>
+                              <td><strong>editore</strong><br></td>
+                           </tr>
+                           <tr>
+                              <td>Casa editrice Barbera</td>
+                           </tr>
+                           <tr>
+                              <td><strong>data</strong></td>
+                           </tr>
+                           <tr>
+                              <td>26 maggio 1878<br></td>
+                           </tr>
+                           <tr>
+                              <td><strong>Sezioni codificate</strong></td>
+                           </tr>
+                           <td>Le dimostrazioni degli studenti di liceo<br>Gli esami liceali<br>Bibliografia (Letteratura e storia, Scienze filosofiche)<br>Notizie<br></td>
+                           <tr>
+                              <td><strong>riferimenti dei testi nella rassegna</strong></td>
+                           </tr>
+                           <tr>
+                              <td>Volume: 2<br>
+                                 Fascicolo: 22,36<br>
+                                 Pagine: 408,409-151,152</td><br></tr>
+                        </table>
+                     </div>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <div class="tasti"><button class="yellow" id="persone_reali">Persone Reali</button><span id="counter_persone" class="counter">0</span><button class="gold" id="bibliografia">bibliografia</button><span id="counter_bibliografia" class="counter">0</span><button class="pink" id="luoghi">luoghi</button><span id="counter_luoghi" class="counter">0</span><button class="red" id="errori">errori</button><span id="counter_errori" class="counter">0</span><button class="grey" id="correzioni">correzioni</button><span id="counter_correzioni" class="counter">0</span><button class="light_pink" id="abbreviazioni">abbreviazioni</button><span id="counter_abbreviazioni" class="counter">0</span><button class="light_blue" id="estensioni">estensioni</button><span id="counter_estensioni" class="counter">0</span><button class="green" id="date">date</button><span id="counter_date" class="counter">0</span><button class="brown" id="Organizzazioni">Organizzazioni</button><span id="counter_organizzazioni" class="counter">0</span><button class="light_brown" id="foreign">parole straniere</button><span id="counter_foreign" class="counter">0</span></div>
+      <div class="container">
+         <div class="page"><img src="img_progetto_cod/le_dimostrazioni_degli_studenti_del_liceo_1.png" usemap="#p408" alt="Immagine_p408" class="facsimile"><map name="p408"><area id="p408_title" coords="527,976,966,1001"><area id="p408_p1" coords="526,1000,964,1208"><area id="p408_p2" coords="527,1209,965,1360"></map><table class="colonne">
+               <tbody>
+                  <tr>
+                     <th class="colonna_1">colonna 1</th>
+                     <th class="colonna_2">colonna 2</th>
+                  </tr>
+                  <td>
+                     <div class="col_sx"></div>
+                  </td>
+                  <td>
+                     <div class="col_dx">
+                        <div class="title"><span id="p408_title"><strong>p408_title</strong></span><div class="title_apply">
+                              
+                              <div class="line_b"></div>LE DIMOSTRAZIONI DEGLI STUDENTI DI LICEO
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p408_p1"><strong>p408_p1</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Il <span class="person"><a href="">Ministro dell’ Istruzione pubblica </a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Francesco
+                                 De sanctis
+                                 <br><strong>Nascita: </strong>
+                                 28/03/1817
+                                 <br><strong>Morte: </strong>
+                                 29/12/1883
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Francesco_de_Sanctis">https://it.wikipedia.org/wiki/Francesco_de_Sanctis<br></a></span> intende concedere
+                              
+                              <div class="line_b"></div>larghezze nuove per l’esame di licenza liceale. Il candidato
+                              
+                              <div class="line_b"></div>che fallisse in una materia, la quale non fosse il latino o l’ita
+                              
+                              <div class="line_b"></div>liano, nè risguardasse gli studi da esso prescelti per la sua
+                              
+                              <div class="line_b"></div>carriera professionale, verrebbe ammesso egualmente all’Uni
+                              
+                              <div class="line_b"></div>versità, salvo a <span class="abbreviazioni">ripeter</span><span class="estensioni"> ripetere</span> la prova durante l’anno. Se il candidato
+                              
+                              <div class="line_b"></div>fallisse in più d’ una materia della licenza liceale, non sa
+                              
+                              <div class="line_b"></div>rebbe obbligato nè a rifare il corso, nè a ripetere tutti gli
+                              
+                              <div class="line_b"></div>esami, bensì gli basterebbe <span class="abbreviazioni">ripeter</span><span class="estensioni"> ripetere</span> l’esame in quelle materie
+                              
+                              <div class="line_b"></div>soltanto, nelle quali è caduto. Queste sembrano essere, in
+                              
+                              <div class="line_b"></div>sostanza, le deliberazioni dell’ <span class="abbreviazioni">on.</span><span class="estensioni"> onorevole</span> <span class="person"><a href="">De sanctis</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Francesco
+                                 De sanctis
+                                 <br><strong>Nascita: </strong>
+                                 28/03/1817
+                                 <br><strong>Morte: </strong>
+                                 29/12/1883
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Francesco_de_Sanctis">https://it.wikipedia.org/wiki/Francesco_de_Sanctis<br></a></span>.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p408_p2"><strong>p408_p2</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Gli studenti di <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span> sono andati in visibilio, hanno accla
+                              
+                              <div class="line_b"></div>mato al  Ministro <span class="epiteti">liberatore</span>, e non potendo <span class="abbreviazioni">ringraziar</span><span class="estensioni"> ringraziare</span> lui,
+                              
+                              <div class="line_b"></div>hanno ringraziato la <span class="person"><a href="">signora De Sanctis</a></span><span class="info"><br><strong>Nome: </strong>
+                                 Maria Teresa
+                                 Arena
+                                 <br><strong>Professione: </strong>Nobile<br></span> ed il Prefetto. E per
+                              
+                              <div class="line_b"></div>chè no, poveri giovani? Non sono essi della pasta medesima
+                              
+                              <div class="line_b"></div>di quelli, che gridarono pochi anni fa : <span class="said"></span>
+                              
+                              <div class="line_b"></div>Se il Ministro volea fare un passo di più e abolire del tutto
+                              
+                              <div class="line_b"></div>l’esame di licenza liceale, gli avremmo veduti pellegrinare
+                              
+                              <div class="line_b"></div>a <span class="place"><a href="">Roma</a></span><span class="info"><br><strong>Posto: </strong>Roma<br><strong>Località: </strong>Italia,Europa<br></span> e salire in <span class="place"><a href="">Campidoglio</a></span><span class="info"><br><strong>Posto: </strong>Campidoglio<br><strong>Località: </strong>Italia,Europa<br></span> a ringraziare gli Dei.
+                              </div>
+                        </div>
+                     </div>
+                  </td>
+               </tbody>
+            </table>
+         </div>
+         <div class="page"><img src="img_progetto_cod/le_dimostrazioni_degli_studenti_del_liceo_2.png" usemap="#p409" alt="Immagine_p409" class="facsimile"><map name="p409"><area id="p409_p1" coords="61,110,492,992"><area id="p409_p2" coords="59,990,490,1229"><area id="p409_p3" coords="57,1229,493,1360"><area id="p409_p4_cb" coords="506,112,943,170"></map><table class="colonne">
+               <tbody>
+                  <tr>
+                     <th class="colonna_1">colonna 1</th>
+                     <th class="colonna_2">colonna 2</th>
+                  </tr>
+                  <td>
+                     <div class="col_sx">
+                        <div class="paragraph"><span id="p409_p1"><strong>p409_p1</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Quanto a noi, diciamo schietto che queste deliberazioni
+                              
+                              <div class="line_b"></div>dell’ <span class="abbreviazioni">on.</span><span class="estensioni"> onorevole</span> <span class="person"><a href="">De sanctis</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Francesco
+                                 De sanctis
+                                 <br><strong>Nascita: </strong>
+                                 28/03/1817
+                                 <br><strong>Morte: </strong>
+                                 29/12/1883
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Francesco_de_Sanctis">https://it.wikipedia.org/wiki/Francesco_de_Sanctis<br></a></span> non ci sembrano lodevoli. Chi ha te
+                              
+                              <div class="line_b"></div>nuto dietro alle lunghe e travagliose vicende dell’ esame
+                              
+                              <div class="line_b"></div>dilicenza liceale, sa benissimo che, malgrado tutti i cla
+                              
+                              <div class="line_b"></div>mori, la severità e <span class="errori">1’</span><span class="correzioni"> l'</span> ampiezza di questo esame si vollero
+                              
+                              <div class="line_b"></div>sempre meglio dirette a dare una sanzione seria e positiva
+                              
+                              <div class="line_b"></div>a quell’ insieme di cognizioni, in cui è riposta ogni spe
+                              
+                              <div class="line_b"></div>ranza che sorga a poco a poco ed entri nel costume ita
+                              
+                              <div class="line_b"></div>liano quella sodacolturagenerale, che negli altri paesi ci
+                              
+                              <div class="line_b"></div>vili fornisce così saldo fondamento al progresso scientifico,
+                              
+                              <div class="line_b"></div>alle discipline speciali, ed alle applicazioni varie dell’ atti
+                              
+                              <div class="line_b"></div>vità individuale. Questo concetto eccellente, ed al quale non
+                              
+                              <div class="line_b"></div>vogliamo ora esaminare se e quanto risponda <span class="errori">1’</span><span class="correzioni"> l'</span>  ordina
+                              
+                              <div class="line_b"></div>mento della nostra istruzione secondaria, è rovesciato di
+                              
+                              <div class="line_b"></div>colpo dalle disposizioni dell’<span class="abbreviazioni">on.</span><span class="estensioni"> onorevole</span> <span class="person"><a href="">De sanctis</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Francesco
+                                 De sanctis
+                                 <br><strong>Nascita: </strong>
+                                 28/03/1817
+                                 <br><strong>Morte: </strong>
+                                 29/12/1883
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Francesco_de_Sanctis">https://it.wikipedia.org/wiki/Francesco_de_Sanctis<br></a></span>. Se l’attuale or
+                              
+                              <div class="line_b"></div>dinamento dell’ istruzione liceale non si ritiene adattato
+                              
+                              <div class="line_b"></div>a fornire agli alunni una buona colturagenerale, lo si
+                              
+                              <div class="line_b"></div>modifichi, ma se nell’ esame dilicenza liceale si ricomin
+                              
+                              <div class="line_b"></div>cia a distinguere materia da materia, se si ristabilisco
+                              
+                              <div class="line_b"></div>no fra esse categorie di importanza diversa se (che è peg
+                              
+                              <div class="line_b"></div>gio ancora) si lascia arbitro l’alunno di giudicare quali
+                              
+                              <div class="line_b"></div>materie importino di più alla professione cui vorrà dedi
+                              
+                              <div class="line_b"></div>carsi, il concetto stesso della cultura generale, che si ebbe
+                              
+                              <div class="line_b"></div>in animo di stabilire <span class="errori">coinè</span><span class="correzioni"> come</span> avviamento indispensabile ad
+                              
+                              <div class="line_b"></div>ogni disciplina o professione, sfuma completamente e si
+                              
+                              <div class="line_b"></div>ritorna a quello (che ci sembra di utilità molto dubbia)
+                              
+                              <div class="line_b"></div>di spianar la via il più possibile ad assicurarci ogni anno
+                              
+                              <div class="line_b"></div>non la miglior qualità, bensì la maggior quantità di pro
+                              
+                              <div class="line_b"></div>fessionisti. Ciò sia detto in tesi generale. Quanto alle ap
+                              
+                              <div class="line_b"></div>plicazioni, saremmo davvero curiosi di sapere chi assicu
+                              
+                              <div class="line_b"></div>rerà al<span class="person"><a href=""> Ministro </a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Francesco
+                                 De sanctis
+                                 <br><strong>Nascita: </strong>
+                                 28/03/1817
+                                 <br><strong>Morte: </strong>
+                                 29/12/1883
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Francesco_de_Sanctis">https://it.wikipedia.org/wiki/Francesco_de_Sanctis<br></a></span>la sincerità e la stabilità della vocazione
+                              
+                              <div class="line_b"></div>dell’ alunno, mentre è più che probabile che, con la smania
+                              
+                              <div class="line_b"></div>che invade ora i padri di famiglia di presto addottorare i
+                              
+                              <div class="line_b"></div>loro figli, gli studenti scelgano all’Università un ramo di
+                              
+                              <div class="line_b"></div>studi diverso a seconda dell’ esame speciale in cui non riu
+                              
+                              <div class="line_b"></div>scirono nellalicenza liceale. E minimo sarà pure il profitto
+                              
+                              <div class="line_b"></div>che trarrà dal primo anno d’ Università <span class="errori">1’</span><span class="correzioni"> l'</span>  alunno rigettato
+                              
+                              <div class="line_b"></div>in alcune materie dell’ esame dilicenza liceale, poiché col
+                              
+                              <div class="line_b"></div>pensiero fisso di dover rifare una parte di <span class="errori">qiielfi</span><span class="correzioni"> quell'</span> esame, egli
+                              
+                              <div class="line_b"></div>attenderà poco ai nuovi studi,  pei quali il <span class="person"><a href="">Ministro</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Francesco
+                                 De sanctis
+                                 <br><strong>Nascita: </strong>
+                                 28/03/1817
+                                 <br><strong>Morte: </strong>
+                                 29/12/1883
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Francesco_de_Sanctis">https://it.wikipedia.org/wiki/Francesco_de_Sanctis<br></a></span> ha vo
+                              
+                              <div class="line_b"></div>luto lastricargli la via con tante condiscendenze. Quanto ai
+                              
+                              <div class="line_b"></div>licei, la facoltà data ai giovani di ripeter l’esame nelle ma
+                              
+                              <div class="line_b"></div>terie non superate, senza rifare egualmente il corso scola
+                              
+                              <div class="line_b"></div>stico, li riempirà nuovamente di uditori spigolanti qua e là
+                              
+                              <div class="line_b"></div>ciò che fa al loro bisogno, con quanto vantaggio alla di
+                              
+                              <div class="line_b"></div>sciplina, all’ ordine degli studi ed al profitto degli alunni
+                              
+                              <div class="line_b"></div>veri non è chi non veda.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p409_p2"><strong>p409_p2</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Il Prefetto di <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span>, nella risposta che ha dato ai dimo
+                              
+                              <div class="line_b"></div>stranti, non sembra molto persuaso della bontà della nuova
+                              
+                              <div class="line_b"></div>disposizione ministeriale. Noi avremmo preferito di sentirlo
+                              
+                              <div class="line_b"></div>dichiarare a quei giovani, che una dimostrazione di piazza,
+                              
+                              <div class="line_b"></div>pro o contro il <span class="person"><a href=""> Ministro</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Francesco
+                                 De sanctis
+                                 <br><strong>Nascita: </strong>
+                                 28/03/1817
+                                 <br><strong>Morte: </strong>
+                                 29/12/1883
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Francesco_de_Sanctis">https://it.wikipedia.org/wiki/Francesco_de_Sanctis<br></a></span>, è una infrazione alle discipline sco
+                              
+                              <div class="line_b"></div>lastiche non tollerabile nè da lasciarsi impunita. Ma sappia
+                              
+                              <div class="line_b"></div>mo che in <span class="place"><a href=""> Italia</a></span><span class="info"><br><strong>Posto: </strong>Italia<br><strong>Località: </strong>Europa<br></span> questo è pretender troppo. Tutto armonizza
+                              
+                              <div class="line_b"></div>da cima a fondo, e come in alto bisogna destreggiarsi alla
+                              
+                              <div class="line_b"></div>meglio per <span class="abbreviazioni">dispiacer</span><span class="estensioni"> dispiacere</span> meno che si può ora a questi ed ora
+                              
+                              <div class="line_b"></div>a quelli, così non fanno male, se vengono, anche i battimani
+                              
+                              <div class="line_b"></div>dei ragazzi delle scuole. Agli interessi della cultura e <span class="errori">deifi</span><span class="correzioni"> dell'</span> istruzione 
+                              
+                              <div class="line_b"></div>in<span class="place"><a href=""> Italia </a></span><span class="info"><br><strong>Posto: </strong>Italia<br><strong>Località: </strong>Europa<br></span>pensino i presidi e i professori che
+                              
+                              <div class="line_b"></div>la politica non lascia a un<span class="person"><a href=""> Ministro</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Francesco
+                                 De sanctis
+                                 <br><strong>Nascita: </strong>
+                                 28/03/1817
+                                 <br><strong>Morte: </strong>
+                                 29/12/1883
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Francesco_de_Sanctis">https://it.wikipedia.org/wiki/Francesco_de_Sanctis<br></a></span> tempo ed agio per farlo.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p409_p3"><strong>p409_p3</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Il <span class="Org"><a href="">Consiglio superiore</a></span><span class="info"><br><strong>Nome azienda: </strong>Consiglio superiore<br><br><strong>Nascita azienda: </strong>1947<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Consiglio_nazionale_della_pubblica_istruzione">https://it.wikipedia.org/wiki/Consiglio_nazionale_della_pubblica_istruzione<br></a></span> non ha approvato queste pro
+                              
+                              <div class="line_b"></div>poste dell’ <span class="abbreviazioni">on.</span><span class="estensioni"> onorevole</span> <span class="person"><a href="">De sanctis</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Francesco
+                                 De sanctis
+                                 <br><strong>Nascita: </strong>
+                                 28/03/1817
+                                 <br><strong>Morte: </strong>
+                                 29/12/1883
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Francesco_de_Sanctis">https://it.wikipedia.org/wiki/Francesco_de_Sanctis<br></a></span>, ma esso, si dice, è passato so
+                              
+                              <div class="line_b"></div>pra con gran fermezza a tale disapprovazione. Era vera
+                              
+                              <div class="line_b"></div>mente desiderabile che<span class="errori">1’</span><span class="correzioni"> l'</span><span class="abbreviazioni">on.</span><span class="estensioni"> onorevole</span> <span class="person"><a href=""> Ministro</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Francesco
+                                 De sanctis
+                                 <br><strong>Nascita: </strong>
+                                 28/03/1817
+                                 <br><strong>Morte: </strong>
+                                 29/12/1883
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Francesco_de_Sanctis">https://it.wikipedia.org/wiki/Francesco_de_Sanctis<br></a></span> avesse serbata tanta
+                              
+                              <div class="line_b"></div>vigoria di carattere a migliore occasione, e<span class="errori">1’</span><span class="correzioni"> l'</span>avesse spie
+                              
+                              <div class="line_b"></div>gata maggiormente nel timido e complimentoso telegramma
+                              
+                              <div class="line_b"></div>riferito dai giornali, col quale <span class="abbreviazioni">par</span><span class="estensioni"> pare</span> che chieda a titolo di
+                              </div>
+                        </div>
+                     </div>
+                  </td>
+                  <td>
+                     <div class="col_dx">
+                        <div class="paragraph"><span id="p409_p4_cb"><strong>p409_p4_cb</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>favore dagli studenti di liceo quella disciplina che egli per
+                              
+                              <div class="line_b"></div>il suo ufficio ha dovere di esigere e d’imporre al bisogno
+                              
+                              <div class="line_b"></div> colle pene scolastiche <span class="errori">eh’</span><span class="correzioni"> ch'</span> egli ha autorità d’infliggere.
+                              </div>
+                        </div>
+                     </div>
+                  </td>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <div class="container">
+         <div class="page"><img src="img_progetto_cod/Gli_esami_liceali_1.png" usemap="#p164" alt="Immagine_p164" class="facsimile"><map name="p164"><area id="p164_title" coords="192,855,387,876"><area id="p164_p1" coords="117,874,487,895"><area id="p164_p2" coords="74,891,504,1171"><area id="p164_p3" coords="71,1169,503,1339"><area id="p164_p4_cb" coords="538,101,867,121"><area id="p164_p5" coords="518,118,948,341"><area id="p164_p6" coords="517,339,950,487"><area id="p164_p7" coords="519,489,949,784"><area id="p164_p8" coords="519,781,948,953"><area id="p164_p9" coords="519,952,950,1227"><area id="p164_p10" coords="521,1227,951,1336"></map><table class="colonne">
+               <tbody>
+                  <tr>
+                     <th class="colonna_1">colonna 1</th>
+                     <th class="colonna_2">colonna 2</th>
+                  </tr>
+                  <td>
+                     <div class="col_sx">
+                        <div class="title"><span id="p164_title"><strong>p164_title</strong></span><div class="title_apply">
+                              
+                              <div class="line_b"></div>GLI ESAMI LICEALI
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p164_p1"><strong>p164_p1</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Ai Direttori. <span class="place"><a href=""><span class="errori">N a p o li</span><span class="correzioni"> Napoli</span></a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span> , <span class="date"><span class="errori">S5 </span><span class="correzioni"> 25</span> agosto</span>.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p164_p2"><strong>p164_p2</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Sono stato in questi giorni a discorrere con più d’un
+                              
+                              <div class="line_b"></div>professore, e non tutti <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> licei di <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span>, degli esami di
+                              
+                              <div class="line_b"></div>licenza ginnasiale e liceale, <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> quali è per chiudersi qui la
+                              
+                              <div class="line_b"></div>prima sessione, l’estiva ; e per la vivacità delle discussioni
+                              
+                              <div class="line_b"></div>udite, e per la importanza di questo <span class="errori">eh’</span><span class="correzioni"> ch'</span> è di gran lunga il
+                              
+                              <div class="line_b"></div>maggior centro e campo di esami che sia in <span class="place"><a href=""> Italia</a></span><span class="info"><br><strong>Posto: </strong>Italia<br><strong>Località: </strong>Europa<br></span>, non ho
+                              
+                              <div class="line_b"></div>voluto trasandare, di raccogliere le impressioni e giudizi, di
+                              
+                              <div class="line_b"></div>confrontarli con ciò che voi avete già scritto intorno a questi
+                              
+                              <div class="line_b"></div>vene qualche cosa. Siamo, e i lettori della <span class="bibliografia"><a href="https://it.wikipedia.org/wiki/Rassegna_settimanale"><span class="abbreviazioni">Rassegna</span><span class="estensioni"> Rassegna Setimanale</span></a></span><span class="info"><br><strong>Titolo: </strong>Rassegna Settimanale<br><strong>Autore: </strong>Leopoldo Franchetti Sidney Sonnino<br><strong>Anno: </strong>1878<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Rassegna_settimanale">https://it.wikipedia.org/wiki/Rassegna_settimanale<br></a></span> lo sanno,
+                              
+                              <div class="line_b"></div>esami nella <span class="bibliografia"><a href="https://it.wikipedia.org/wiki/Rassegna_settimanale"><span class="abbreviazioni">Rassegna</span></a></span><span class="info"><br><strong>Titolo: </strong>Rassegna Settimanale<br><strong>Autore: </strong>Leopoldo Franchetti Sidney Sonnino<br><strong>Anno: </strong>1878<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Rassegna_settimanale">https://it.wikipedia.org/wiki/Rassegna_settimanale<br></a></span>, con ciò che già ne sapevo, e di scriver-
+                              
+                              <div class="line_b"></div>vene qualche cosa. Siamo, e i lettori della <span class="bibliografia"><a href="https://it.wikipedia.org/wiki/Rassegna_settimanale"><span class="abbreviazioni">Rassegna</span><span class="estensioni"> Rassegna Setimanale</span></a></span><span class="info"><br><strong>Titolo: </strong>Rassegna Settimanale<br><strong>Autore: </strong>Leopoldo Franchetti Sidney Sonnino<br><strong>Anno: </strong>1878<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Rassegna_settimanale">https://it.wikipedia.org/wiki/Rassegna_settimanale<br></a></span> lo sanno,
+                              
+                              <div class="line_b"></div>in un momento critico in <span class="place"><a href=""> Italia</a></span><span class="info"><br><strong>Posto: </strong>Italia<br><strong>Località: </strong>Europa<br></span> per queste prove, mai più
+                              
+                              <div class="line_b"></div>che ora discusse e dibattute se non nella stampa, <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> <span class="Org"><a href="">con-
+                                    
+                                    <div class="line_b"></div>sigli del Ministero</a></span><span class="info"><br><strong>Nome azienda: </strong>Consiglio superiore<br><br><strong>Nascita azienda: </strong>1948<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Consiglio_dei_ministri_della_Repubblica_Italiana">https://it.wikipedia.org/wiki/Consiglio_dei_ministri_della_Repubblica_Italiana<br></a></span>,come <span class="abbreviazioni">ne’</span><span class="estensioni"> nei</span> capannelli degli studenti. Si
+                              
+                              <div class="line_b"></div>torna oramai a poco a poco a tempi poco lieti, che parevano
+                              
+                              <div class="line_b"></div>divenuti un lontano passato.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p164_p3"><strong>p164_p3</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Per questi esami, la legge e i regolamenti stanno ancora
+                              
+                              <div class="line_b"></div>in piedi; ma bisogna dire che lo spirito loro sia venuto
+                              
+                              <div class="line_b"></div>meno, quando deputati che li combatterono, quando diret- 
+                              
+                              <div class="line_b"></div>tori d’istituti privati che videro per anni respinti i più
+                              
+                              <div class="line_b"></div><span class="abbreviazioni">de’</span><span class="estensioni"> dei</span>loro da queste prove, si veggon prescelti a partecipare
+                              
+                              <div class="line_b"></div>ed a sciupare col solo nome loro le presenti commissioni
+                              
+                              <div class="line_b"></div>d’esami. Il Ministro forse non vorrà distrutte queste prove,
+                              
+                              <div class="line_b"></div>ma a vedere a chi le affida ci sarebbe da crederlo. Il suo
+                              
+                              <div class="line_b"></div>intendimento sarà nobile, ma l’effetto è triste.
+                              </div>
+                        </div>
+                     </div>
+                  </td>
+                  <td>
+                     <div class="col_dx">
+                        <div class="paragraph"><span id="p164_p4_cb"><strong>p164_p4_cb</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Torniamo un po’ indietro con le ricordanze.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p164_p5"><strong>p164_p5</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Prima della provvida riforma con cui il <span class="person"><a href="">Correnti</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Cesare
+                                 Correnti
+                                 <br><strong>Nascita: </strong>
+                                 03/01/1815
+                                 <br><strong>Morte: </strong>
+                                 04/10/1888
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Cesare_Correnti">https://it.wikipedia.org/wiki/Cesare_Correnti<br></a></span> volle
+                              
+                              <div class="line_b"></div>intercedesse un triennio tra <span class="errori">1’</span><span class="correzioni"> l'</span>esame di licenza ginnasiale e
+                              
+                              <div class="line_b"></div>quello di licenza liceale, questo tempo dell’ estate, era, ri
+                              
+                              <div class="line_b"></div>cordo, un periodo eroico, almeno a  <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span>. Il mese degli
+                              
+                              <div class="line_b"></div>esami era una vera e propria battaglia, dove quasi ogni
+                              
+                              <div class="line_b"></div>giovane, <span class="abbreviazioni">da’</span><span class="estensioni"> dai</span> quindici anni in su, veniva a far la sua prova,
+                              
+                              <div class="line_b"></div>a scagliare nella palestra aperta a tutti <span class="errori">1’</span><span class="correzioni"> l'</span>arme dell’ audacia
+                              
+                              <div class="line_b"></div>o della minaccia, della raccomandazione o della preghiera.
+                              
+                              <div class="line_b"></div>E, a sceverare i pochi maturi dalla folla degl’ incapaci a su
+                              
+                              <div class="line_b"></div>perare <span class="errori">fi</span><span class="correzioni"> l'</span> esame, la stanchezza' delle Commissioni, caricate
+                              
+                              <div class="line_b"></div>ciascuna di cento o duecento esaminanti, lasciava una parte
+                              
+                              <div class="line_b"></div>anche al caso.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p164_p6"><strong>p164_p6</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Era il tempo delle dimostrazioni di piazza, delle fi
+                              
+                              <div class="line_b"></div>schiate <span class="abbreviazioni">a’</span><span class="estensioni"> ai</span> professori, delle illusioni e degli sconforti scon
+                              
+                              <div class="line_b"></div>finati <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> giovani e <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> genitori. E come il caso finiva per
+                              
+                              <div class="line_b"></div>avere parte non poca al successo, fra tanta confusione,
+                              
+                              <div class="line_b"></div>s’usciva dall’ esame quasi come dalla vincita del lotto il
+                              
+                              <div class="line_b"></div>sabato; della vittoria o della sconfitta si faceva responsa
+                              
+                              <div class="line_b"></div>bile la fortuna, e si tornava l’anno appresso a giocare
+                              
+                              <div class="line_b"></div><span class="errori">1’</span><span class="correzioni"> l'</span>esame, come per ritentar la sorte.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p164_p7"><strong>p164_p7</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Dopo l’intervallo prescritto dal <span class="person"><a href="">Correnti</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Cesare
+                                 Correnti
+                                 <br><strong>Nascita: </strong>
+                                 03/01/1815
+                                 <br><strong>Morte: </strong>
+                                 04/10/1888
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Cesare_Correnti">https://it.wikipedia.org/wiki/Cesare_Correnti<br></a></span>, s’ era comin
+                              
+                              <div class="line_b"></div>ciato un po’ a respirare. <span class="abbreviazioni">D’</span><span class="estensioni"> dii</span>anno in anno, ripopolati i licei
+                              
+                              <div class="line_b"></div>governativi, qui <span class="abbreviazioni">s’</span><span class="estensioni"> si</span> è cominciato ad avere almeno un con
+                              
+                              <div class="line_b"></div> tra ciò che si può pretendere da chi abbia studiato
+                              
+                              <div class="line_b"></div>regolarmente tre anni, e le cognizioni incomplete abbor
+                              
+                              <div class="line_b"></div> racciate e inesatte degli scolari rimaste per un tempo
+                              
+                              <div class="line_b"></div>eguale e spesso minore negli istituti privati. Il rigore irri
+                              
+                              <div class="line_b"></div>tava meno, perchè il confronto era pubblico ; si cominciava
+                              
+                              <div class="line_b"></div><span class="abbreviazioni">da’</span><span class="estensioni"> dai</span> padri di famiglia a confidar più nello studio seguito
+                              
+                              <div class="line_b"></div>e intenso de’ figli che non nel caso o nelle pressioni usate
+                              
+                              <div class="line_b"></div><span class="abbreviazioni">a’</span><span class="estensioni"> ai</span> professori. <span class="abbreviazioni">Ne’</span><span class="estensioni"> Nei</span>licei governativi si faceva più severa la
+                              
+                              <div class="line_b"></div>prova pel passaggio da classe a classe, negli istituti privati
+                              
+                              <div class="line_b"></div><span class="abbreviazioni">s’</span><span class="estensioni"> si</span>aveva un po’ di riguardo a mandare all’ esame, col nome
+                              
+                              <div class="line_b"></div>del liceo privato, il giovane immaturo. Ed ecco giungere
+                              
+                              <div class="line_b"></div>la gran novità delle Commissioni miste del <span class="person"><a href="">Coppino</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Michele
+                                 Coppino
+                                 <br><strong>Nascita: </strong>
+                                 01/04/1822
+                                 <br><strong>Morte: </strong>
+                                 25/08/1901
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Michele_Coppino">https://it.wikipedia.org/wiki/Michele_Coppino<br></a></span>, che
+                              
+                              <div class="line_b"></div>scompiglia il presente e fa temer peggio per <span class="errori">1’</span><span class="correzioni"> l'</span>avvenire.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p164_p8"><strong>p164_p8</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Un’ interpretazione confusa della idea della libertà d’in
+                              
+                              <div class="line_b"></div>segnamento ispirò a quel Ministro l’idea delle Commissioni miste
+                              
+                              <div class="line_b"></div>in tutta l’<span class="place"><a href=""> Italia </a></span><span class="info"><br><strong>Posto: </strong>Italia<br><strong>Località: </strong>Europa<br></span>per gli esami di licenza ginnasiale
+                              
+                              <div class="line_b"></div>o liceale. Pochi insegnanti privati di <span class="place"><a href="">Torino</a></span><span class="info"><br><strong>Posto: </strong>Torino<br><strong>Località: </strong>Italia,Europa<br></span> e di <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span>,
+                              
+                              <div class="line_b"></div>di cui alcuni più fortunati certo in politica che non nell’in
+                              
+                              <div class="line_b"></div>segnamento, persuasero il <span class="Org"><a href="">Governo</a></span><span class="info"><br><strong>Nome azienda: </strong>Governo<br><br><strong>Nascita azienda: </strong>1948<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Governo_della_Repubblica_Italiana">https://it.wikipedia.org/wiki/Governo_della_Repubblica_Italiana<br></a></span> che non <span class="abbreviazioni">v’</span><span class="estensioni"> vi</span> era libera con
+                              
+                              <div class="line_b"></div>correnza tra l’insegnamento pubblico ed il privato finché gli
+                              
+                              <div class="line_b"></div>esami fossero fatti <span class="abbreviazioni">da’</span><span class="estensioni"> dai</span> soli professori governativi. Che cosa
+                              
+                              <div class="line_b"></div>ne seguì in tutta <span class="place"><a href=""> Italia </a></span><span class="info"><br><strong>Posto: </strong>Italia<br><strong>Località: </strong>Europa<br></span> e specialmente in <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span>?
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p164_p9"><strong>p164_p9</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Per dimostrare che libera concorrenza non vi fosse
+                              
+                              <div class="line_b"></div>stata prima, sarebbe bisognato dimostrare che i professori
+                              
+                              <div class="line_b"></div>governativi avessero avuto, per avvantaggiare immeritata
+                              
+                              <div class="line_b"></div>mente i loro allievi negli esami, interesse uguale a quello
+                              
+                              <div class="line_b"></div>che avrebbero avuto i professori privati rispetto a’ loro,
+                              
+                              <div class="line_b"></div>entrando nelle Commissioni. Sarebbe poi bisognato dimo
+                              
+                              <div class="line_b"></div>strare, che con le Commissioni miste le condizioni sarebbero
+                              
+                              <div class="line_b"></div>rimaste pari in tutto, cioè che <span class="abbreviazioni">pe’</span><span class="estensioni"> per i</span> giovani usciti dagl’ istituti
+                              
+                              <div class="line_b"></div>privati fosse guarentita la maturità graduale con gli esami
+                              
+                              <div class="line_b"></div>rigorosi di promozione d’ anno in anno, come accade ne
+                              
+                              <div class="line_b"></div>gl’istituti governativi. Ed infine sarebbe bisognato dimo
+                              
+                              <div class="line_b"></div>strare, che negli istituti governativi vi fosse posto per tutti
+                              
+                              <div class="line_b"></div>gli studenti secondari delle città dove quelli sono ; nel qual
+                              
+                              <div class="line_b"></div>modo soltanto potrebbe provarsi che gli alunni degl’ istituti
+                              
+                              <div class="line_b"></div>privati popolano questi per elezione e non per necessità.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p164_p10"><strong>p164_p10</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Poiché si vuol parlare di concorrenza in fatto d’ istru
+                              
+                              <div class="line_b"></div>zione, come se ne parlerebbe a proposito di libertà com
+                              
+                              <div class="line_b"></div>merciale, si può concludere, che le Commissioni miste sono
+                              
+                              <div class="line_b"></div>un protezionismo a rovescio degli istituti privati per opera
+                              
+                              <div class="line_b"></div>del <span class="Org"><a href="">Ministero di pubblica istruzione</a></span><span class="info"><br><strong>Nome azienda: </strong>Ministero di pubblica istruzione<br><br><strong>Nascita azienda: </strong>1861<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Ministero_dell%27istruzione_e_del_merito">https://it.wikipedia.org/wiki/Ministero_dell%27istruzione_e_del_merito<br></a></span>. I frutti se ne ve
+                              
+                              <div class="line_b"></div>dranno col tempo, e quando i clericali saranno meglio or
+                              </div>
+                        </div>
+                     </div>
+                  </td>
+               </tbody>
+            </table>
+         </div>
+         <div class="page"><img src="img_progetto_cod/Gli_esami_liceali_2.png" usemap="#p165" alt="Immagine_p165" class="facsimile"><map name="p165"><area id="p165_p1" coords="75,111,514,158"><area id="p165_p2" coords="74,157,515,533"><area id="p165_p3" coords="73,531,516,985"><area id="p165_p4" coords="71,981,516,1382"><area id="p165_p5_cb" coords="528,116,967,195"><area id="p165_p6" coords="527,194,967,622"><area id="p165_p7" coords="530,624,964,833"><area id="p165_p8" coords="529,832,917,849"><area id="p165_firm" coords="934,833,961,852"></map><table class="colonne">
+               <tbody>
+                  <tr>
+                     <th class="colonna_1">colonna 1</th>
+                     <th class="colonna_2">colonna 2</th>
+                  </tr>
+                  <td>
+                     <div class="col_sx">
+                        <div class="paragraph"><span id="p165_p1"><strong>p165_p1</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>dinati a far la concorrenza che ora non siano. Ma torno
+                              
+                              <div class="line_b"></div>al caso speciale di <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span>.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p165_p2"><strong>p165_p2</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Qui in media si esaminano un <span class="num">600</span> giovani all’ anno per
+                              
+                              <div class="line_b"></div>la licenza liceale, in quattro sedi miste d’esame, ed un <span class="num">700</span>
+                              
+                              <div class="line_b"></div>per la licenza ginnasiale in sei sedi. È il maggior centro
+                              
+                              <div class="line_b"></div>d’esami, che comprende quasi il quarto <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> candidati di
+                              
+                              <div class="line_b"></div>tutto il regno. Ora, questa città ha il sessantesimo circa
+                              
+                              <div class="line_b"></div>della popolazione del regno, e questa provincia ne ha il
+                              
+                              <div class="line_b"></div>trentesimo. Per l’Università, che è l’unica del Napoletano,
+                              
+                              <div class="line_b"></div>s’intende il gran numero degli studenti. <span class="abbreviazioni">Pe’</span><span class="estensioni"> Per i</span> corsi e gli
+                              
+                              <div class="line_b"></div>esami ginnasiali e liceali la ragione del gran numero di
+                              
+                              <div class="line_b"></div>giovani nasce in parte dalla gran popolazione dell’ Università,
+                              
+                              <div class="line_b"></div> a cui molti preferiscono preparare i figli in <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span>
+                              
+                              <div class="line_b"></div>stessa, o i fratelli minori di quelli che già sono all’ Univer-
+                              
+                              <div class="line_b"></div>sità. E, <span class="abbreviazioni">pe’</span><span class="estensioni"> per i</span> nostri provinciali, è più agevole trovar chi
+                              
+                              <div class="line_b"></div>in <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span> si prenda la cura di un giovane, che non chi lo
+                              
+                              <div class="line_b"></div>curi nella capitale della provincia, perchè non c’ è quasi
+                              
+                              <div class="line_b"></div>famiglia agiata del Napoletano che non abbia qui parenti
+                              
+                              <div class="line_b"></div>o amicissimi. C’ è la tradizione vecchia della capitale, c’ è
+                              
+                              <div class="line_b"></div>l’abbondanza di convitti e professori privati, oltre tre licei
+                              
+                              <div class="line_b"></div>e due ginnasi governativi con un convitto, e un liceo e due
+                              
+                              <div class="line_b"></div>ginnasi con due convitti municipali.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p165_p3"><strong>p165_p3</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Venendo agli istituti privati, questi si possono somma
+                              
+                              <div class="line_b"></div>riamente dividere in due categorie, salvo poche eccezioni.
+                              
+                              <div class="line_b"></div><span class="errori">0</span><span class="correzioni">  o </span> sono diretti da preti e son detti clericali, o son detti li
+                              
+                              <div class="line_b"></div>berali e sono diretti quasi sempre da ex-preti. I secondi
+                              
+                              <div class="line_b"></div>riescono politicamente meno perniciosi <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> primi, ma hanno,
+                              
+                              <div class="line_b"></div>i più, una insanabile inferiorità di fronte ai clericali. In
+                              
+                              <div class="line_b"></div>dustrie gli uni e gli altri ; creati e tenuti su a fin di lucro,
+                              
+                              <div class="line_b"></div>accade tuttavia che gl’istituti clericali sono almeno industrie
+                              
+                              <div class="line_b"></div> d’un capitale: <span class="abbreviazioni">han</span><span class="estensioni"> hanno</span> casa gratuita spesso, per effetto
+                              
+                              <div class="line_b"></div>di sottoscrizioni private o per investimenti di capitali del
+                              
+                              <div class="line_b"></div>direttore; hanno ordine almeno esterno, meno furia di gua
+                              
+                              <div class="line_b"></div>dagno, meno sudiciume. Negl’ istituti detti liberali (salvo
+                              
+                              <div class="line_b"></div>sempre qualche eccezione) la confusione è maggiore, ed an
+                              
+                              <div class="line_b"></div>che la ciarlataneria : e se durano, è strano doverlo dire,
+                              
+                              <div class="line_b"></div>durano principalmente perchè son reputati protetti dal <span class="Org"><a href="">Go-
+                                    
+                                    <div class="line_b"></div>verno</a></span><span class="info"><br><strong>Nome azienda: </strong>Governo<br><br><strong>Nascita azienda: </strong>1948<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Governo_della_Repubblica_Italiana">https://it.wikipedia.org/wiki/Governo_della_Repubblica_Italiana<br></a></span>i loro direttori, intimi di questo o quel deputato,
+                              
+                              <div class="line_b"></div>consiglieri comunali o deputati essi stessi, i soli fra i pri
+                              
+                              <div class="line_b"></div>vati che abbiano avuto, in questi tre anni, il privilegio di
+                              
+                              <div class="line_b"></div>far parte delle Commissioni d’ esame. E come si potrebbe
+                              
+                              <div class="line_b"></div>infatti chiamare a far parte di esse direttori o professori
+                              
+                              <div class="line_b"></div>d’istituti clericali ? Si dovrebbe, mi diranno essi forse, per
+                              
+                              <div class="line_b"></div>equità. Ma, per ora, qui in <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span>, non è così. Verrà però il
+                              
+                              <div class="line_b"></div>loro tempo, se si cammina di questo passo, ed essi lo sanno,
+                              
+                              <div class="line_b"></div>anzi l’aspettano, e migliorano intanto i loro istituti.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p165_p4"><strong>p165_p4</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Quest’ anno la differenza, che è stata sempre grande,
+                              
+                              <div class="line_b"></div>tra il valore degli alunni degl’ istituti governativi e muni
+                              
+                              <div class="line_b"></div>cipali da una parte, e gli alunni de’ privati dall’ altra, è
+                              
+                              <div class="line_b"></div>diventata un abisso. La metà degli alunni delle scuole pri
+                              
+                              <div class="line_b"></div>vate non hanno saputo accozzare due pagine di ragione
+                              
+                              <div class="line_b"></div>vole risposta al facile tema d’ italiano. <span class="cit">Pareva di sognare!</span>
+                              
+                              <div class="line_b"></div>mi disse un professore. Si vedeva chiaro, che l’ abito di
+                              
+                              <div class="line_b"></div>scrivere, bene o male, non l’ avevano preso nella scuola
+                              
+                              <div class="line_b"></div>privata, e qui si sa che la frequentano poco, e sempre per
+                              
+                              <div class="line_b"></div>una parte sola del triennio. Ricevono gli attestati di fre
+                              
+                              <div class="line_b"></div>quenza spesso dopo sei mesi che siano stati in un liceo
+                              
+                              <div class="line_b"></div>privato. Così noi ritorniamo man mano alla confusione e
+                              
+                              <div class="line_b"></div>all’ ignoranza di dieci anni fa. Nella prova di matematica,
+                              
+                              <div class="line_b"></div>più difficile, nessuno degli alunni privati è stato capace di
+                              
+                              <div class="line_b"></div>risolvere il tema da sè, come han fatto parecchi <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> gover
+                              
+                              <div class="line_b"></div>nativi o del liceo municipale. Qui sarebbe apparsa chiaris
+                              
+                              <div class="line_b"></div>simamente la differenza tra la diversa maturità delle due
+                              
+                              <div class="line_b"></div>specie d’istituti, se la pressione non fosse stata così grande
+                              
+                              <div class="line_b"></div>sul Ministro, da consigliargli ad ammetter tutti, per ecce
+                              
+                              <div class="line_b"></div>zione all’ esame orale. <span class="abbreviazioni">Or</span><span class="estensioni"> Ora</span> se all’ intervento  <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> professori
+                              
+                              <div class="line_b"></div>privati irresponsabili s’ aggiunge la manna governativa,
+                              </div>
+                        </div>
+                     </div>
+                  </td>
+                  <td>
+                     <div class="col_dx">
+                        <div class="paragraph"><span id="p165_p5_cb"><strong>p165_p5_cb</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div><span class="abbreviazioni">ne’</span><span class="estensioni"> nei</span>giorni appunto della battaglia, si tornerà naturalmente,
+                              
+                              <div class="line_b"></div>e già si torna sempre più <span class="abbreviazioni">da’</span><span class="estensioni"> dai</span> giovani, a fidar nel caso più
+                              
+                              <div class="line_b"></div>che nello studio ; ed <span class="abbreviazioni">a’</span><span class="estensioni"> ai</span> tumulti e alla confusione di dieci
+                              
+                              <div class="line_b"></div>anni fa si verrà da capo <span class="errori">1’</span><span class="correzioni"> l'</span> anno venturo.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p165_p6"><strong>p165_p6</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Un altro professore mi soggiungeva queste parole:<span class="cit"> « già</span>
+                              
+                              <div class="line_b"></div><span class="cit">le prime classi <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> licei governativi cominciano ‘ad essere
+                                 
+                                 <div class="line_b"></div>infestate da pessimi alunni, per la fiacchezza degli esami
+                                 
+                                 <div class="line_b"></div>di licenza ginnasiale cresciuta <span class="abbreviazioni">coll’</span><span class="estensioni"> con l'</span> intervento di uno o due
+                                 
+                                 <div class="line_b"></div>professori privati (a <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span> son due) nelle Commissioni.
+                                 
+                                 <div class="line_b"></div>Quindi le seconde o terze classi liceali cominciano a spo
+                                 
+                                 <div class="line_b"></div>polarsi <span class="abbreviazioni">pe’</span><span class="estensioni"> per i</span> caduti negli esami di passaggio, la grande e seria
+                                 
+                                 <div class="line_b"></div>guarentigia rimasta all’ insegnamento pubblico, e che di
+                                 
+                                 <div class="line_b"></div>fetta del tutto all’ insegnamento secondario privato. »</span> In
+                              
+                              <div class="line_b"></div>vero, la mala voglia <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> professori governativi va crescendo.
+                              
+                              <div class="line_b"></div>E come non crescerebbe se, in un liceo dove un giovane
+                              
+                              <div class="line_b"></div><span class="abbreviazioni">s’</span><span class="estensioni"> si</span>è ucciso per non aver superato l’esame (non in <span class="place"><a href="">Napoli</a></span><span class="info"><br><strong>Posto: </strong>Napoli<br><strong>Località: </strong>Italia,Europa<br></span>),
+                              
+                              <div class="line_b"></div><span class="abbreviazioni">s’</span><span class="estensioni"> si</span>è saputo che questo giovane aveva prima minacciati nella
+                              
+                              <div class="line_b"></div>vita i professori governativi, perchè il collega, docente pri
+                              
+                              <div class="line_b"></div>vato, della Commissione aveva fatto capire al giovane che
+                              
+                              <div class="line_b"></div>il rigore non era venuto da lui? Chi può credere che que
+                              
+                              <div class="line_b"></div>sto caso sia il solo? E qual pena adequata può dare il
+                              
+                              <div class="line_b"></div>Ministro al professore privato che non si comporti con
+                              
+                              <div class="line_b"></div>giustizia e dignità nella Commissione mista ? E qual mezzo
+                              
+                              <div class="line_b"></div>ci ha in certe Commissioni per impedire (massime negli
+                              
+                              <div class="line_b"></div>esami ginnasiali) che i professori privati esaminatori diano
+                              
+                              <div class="line_b"></div>rimbeccata<span class="abbreviazioni">a’</span><span class="estensioni"> ai</span> loro stessi allievi? E se poi l’ esaminatore
+                              
+                              <div class="line_b"></div>privato fosse deputato al <span class="Org"><a href="">Parlamento</a></span><span class="info"><br><strong>Nome azienda: </strong>Parlamento<br><br><strong>Nascita azienda: </strong>1948<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Parlamento_italiano">https://it.wikipedia.org/wiki/Parlamento_italiano<br></a></span> ?....
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p165_p7"><strong>p165_p7</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Già qualche caso <span class="abbreviazioni">s’</span><span class="estensioni"> si</span> è dato di professori governativi che
+                              
+                              <div class="line_b"></div><span class="abbreviazioni">han</span><span class="estensioni"> hanno</span> trovato un facile pretesto per sottrarsi in un esame
+                              
+                              <div class="line_b"></div>di riparazione da così fastidiosa battaglia. Da ciò si misuri
+                              
+                              <div class="line_b"></div>la mala voglia degli altri. Questo scompiglio crescente del-
+                              
+                              <div class="line_b"></div>l’unica guarentigia della maturità della coltura <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> gio
+                              
+                              <div class="line_b"></div>vani che s’avviano alle professioni, è la migliore, la più
+                              
+                              <div class="line_b"></div>provvida preparazione <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> nostri insegnanti clericali al loro
+                              
+                              <div class="line_b"></div>possibile trionfo. Esclusi ora qui dal partecipare coi pri
+                              
+                              <div class="line_b"></div>vati agli esami, già i loro alunni vincono molti delle scuole
+                              
+                              <div class="line_b"></div>private, ed il governo s’occupa, senza accorgersene, a sciu
+                              
+                              <div class="line_b"></div>par le scuole sue.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p165_p8"><strong>p165_p8</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Ci si prepara davvero un bel frutto pel domani! 
+                              </div>
+                        </div>
+                        <div class="saluti"><span id="p165_firm"><strong>p165_firm</strong></span><div class="saluti_apply">
+                              <span class="person"><a href="">J.</a></span>
+                              </div>
+                        </div>
+                     </div>
+                  </td>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <div class="container">
+         <div class="page"><img src="img_progetto_cod/libri_per_i_fanciulli.png" usemap="#p364" alt="Immagine_p364" class="facsimile"><map name="p364"><area id="p364_title" coords="191,102,360,120"><area id="p364_p1" coords="60,118,493,161"><area id="p364_p2" coords="59,163,491,334"><area id="p364_p3" coords="59,335,493,540"><area id="p364_p4" coords="57,540,499,840"><area id="p364_p5" coords="56,840,499,1368"><area id="p364_p6_cb" coords="506,105,944,254"></map><table class="colonne">
+               <tbody>
+                  <tr>
+                     <th class="colonna_1">colonna 1</th>
+                     <th class="colonna_2">colonna 2</th>
+                  </tr>
+                  <td>
+                     <div class="col_sx">
+                        <div class="title"><span id="p364_title"><strong>p364_title</strong></span><div class="title_apply">
+                              
+                              <div class="line_b"></div>LIBRI PER I FANCIULLI.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p364_p1"><strong>p364_p1</strong></span><div class="anonymous_block">
+                              
+                              
+                              <div class="line_b"></div>
+                              
+                              
+                              P.
+                              Conti-Carotti
+                              
+                              
+                              
+                              Le quattro stagioni, libro di lettura. <span class="errori"> Voi.</span><span class="correzioni"> Vol.</span> 1° Inverno,
+                              
+                              <div class="line_b"></div>Vol. 2° Primavera
+                              .-
+                              Firenze,
+                              
+                              F.
+                              Paggi
+                              ,
+                              <span class="date">1877-78</span>
+                              
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p364_p2"><strong>p364_p2</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Avremmo volentieri aspettato a discorrere di questo li
+                              
+                              <div class="line_b"></div>bro allor quando si sarà finito di pubblicare, ma la pub
+                              
+                              <div class="line_b"></div>blicazione sua procede così lenta da far temere che l’aspet
+                              
+                              <div class="line_b"></div>tazione sarebbe stata troppo lunga. Ci vollero oltre dodici
+                              
+                              <div class="line_b"></div>mesi perchè dopo <span class="errori">Vinverno</span><span class="correzioni"> l'inverno</span> comparisse la primavera. Tron
+                              
+                              <div class="line_b"></div>chiamo dunque ogni ulteriore indugio e cominciamo per dire
+                              
+                              <div class="line_b"></div>che se le ultime due stagioni corrisponderanno alle prime,
+                              
+                              <div class="line_b"></div>sarà un anno da dovercene, malgrado alcuni difetti, compia
+                              
+                              <div class="line_b"></div>cere e congratulare con l’autrice.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p364_p3"><strong>p364_p3</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Lo scrivere <span class="abbreviazioni">de’</span><span class="estensioni"> dei</span> buoni libri pei bambini non è un’ opera
+                              
+                              <div class="line_b"></div>facile, benché tutti o quasi tutti in <span class="place"><a href=""> Italia </a></span><span class="info"><br><strong>Posto: </strong>Italia<br><strong>Località: </strong>Europa<br></span> credano di saperla
+                              
+                              <div class="line_b"></div>fare. Questa specie di lavori esige un corredo di precise ed
+                              
+                              <div class="line_b"></div>esatte cognizioni molto più ricco che generalmente non si
+                              
+                              <div class="line_b"></div>supponga, più un criterio finissimo per sceglierle bene e
+                              
+                              <div class="line_b"></div>ordinarle, e finalmente una grande proprietà e semplicità
+                              
+                              <div class="line_b"></div>di linguaggio nell’esporle. Nè tutto ciò basta quando non
+                              
+                              <div class="line_b"></div>vi si aggiunga uno squisito senso di moralità, e la pratica
+                              
+                              <div class="line_b"></div>conoscenza dei bambini, e l’amorosa vocazione di educarli
+                              
+                              <div class="line_b"></div>e istruirli. Chi non <span class="errori">dia</span><span class="correzioni"> ha</span> mai educato è quasi impossibile che
+                              
+                              <div class="line_b"></div>riesca a scrivere un libro educativo davvero buono.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p364_p4"><strong>p364_p4</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Ma la signora <span class="person"><a href="">Conti</a></span><span class="info"><br><strong>Nome: </strong>
+                                 Conti
+                                 <br><strong>Professione: </strong>Educatrice<br></span>  è un’antica educatrice, che dirige
+                              
+                              <div class="line_b"></div>da parecchi anni con molta intelligenza e meravigliosa assi
+                              
+                              <div class="line_b"></div>duità e carità le <span class="Org"><a href="">scuole leopoldine</a></span><span class="info"><br><strong>Nome azienda: </strong>scuole leopoldine<br><br><strong>Nascita azienda: </strong>1780<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Ospedale_di_San_Paolo_(Firenze)#Scuole_Leopoldine">https://it.wikipedia.org/wiki/Ospedale_di_San_Paolo_(Firenze)#Scuole_Leopoldine<br></a></span> di <span class="place"><a href="">Firenze</a></span><span class="info"><br><strong>Posto: </strong>Firenze<br><strong>Località: </strong>Italia,Europa<br></span>; e questa lunga
+                              
+                              <div class="line_b"></div>esperienza le ha giovato a scrivere due volumetti che si di
+                              
+                              <div class="line_b"></div>stinguono molto e per molte qualità da quella infinita mol
+                              
+                              <div class="line_b"></div>titudine di libri di lettura che inondano il mercato librario
+                              
+                              <div class="line_b"></div>italiano. La distribuzione delle materie è quasi sempre fatta
+                              
+                              <div class="line_b"></div>in maniera da tener desta l’attenzione, gli argomenti sono
+                              
+                              <div class="line_b"></div>interessanti e opportunamente variati, e la esposizione sem
+                              
+                              <div class="line_b"></div>plice e in generale chiara. Ma sopra tutto mirabile è l’ac
+                              
+                              <div class="line_b"></div>corgimento con cui l’autrice sa cavare da ogni cosa di cui
+                              
+                              <div class="line_b"></div>parla, un utile, sano e naturale avvertimento per i figli del
+                              
+                              <div class="line_b"></div>popolo a cui si dirige più specialmente. Si vede in lei la
+                              
+                              <div class="line_b"></div>donna che conosce il lato serio della vita e che ha pensato
+                              
+                              <div class="line_b"></div>e forse sofferto molto, ed apparecchia di <span class="abbreviazioni">buon’</span><span class="estensioni"> buonaa</span> ora i bam
+                              
+                              <div class="line_b"></div>bini a pensare ed a soffrire, che vuol dire a <span class="abbreviazioni">diventar</span><span class="estensioni"> diventare</span> uomini.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p364_p5"><strong>p364_p5</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Peccato che a tante eccellenti e rare disposizioni non
+                              
+                              <div class="line_b"></div>congiunga una cultura più larga ed attinta a fonti più si
+                              
+                              <div class="line_b"></div>cure ! La sua erudizione è di terza o quarta mano, e qual
+                              
+                              <div class="line_b"></div>che volta le spiegazioni sue, come quella, per citarne una,
+                              
+                              <div class="line_b"></div>della macchina a vapore, spiegano poco, e le notizie che dà
+                              
+                              <div class="line_b"></div>sono inesatte. Pare, per esempio, a detta sua che <span class="person"><a href="">Napo-
+                                    
+                                    <div class="line_b"></div>leone 1°</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Napoleone
+                                 Bonaparte
+                                 <br><strong>Nascita: </strong>
+                                 15/08/1769
+                                 <br><strong>Morte: </strong>
+                                 05/05/1821
+                                 <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Napoleone_Bonaparte">https://it.wikipedia.org/wiki/Napoleone_Bonaparte<br></a></span> fosse fatto imperatore dei francesi nel <span class="date">1800</span>, e in
+                              
+                              <div class="line_b"></div>vece fu nel <span class="date">1804</span> : e ugualmente non è esatto che <span class="person"><a href="">Vittorio -
+                                    
+                                    <div class="line_b"></div> Alfieri</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Vittorio
+                                 Alfieri
+                                 <br><strong>Nascita: </strong>
+                                 16/01/1746
+                                 <br><strong>Morte: </strong>
+                                 08/10/1803
+                                 <br><strong>Professione: </strong>Poeta<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Vittorio_Alfieri">https://it.wikipedia.org/wiki/Vittorio_Alfieri<br></a></span>finché non cominciò a studiare sul serio trovasse
+                              
+                              <div class="line_b"></div>dappertutto disprezzo; nè che gli Appennini sieno tutti monti
+                              
+                              <div class="line_b"></div>di natura vulcanica. Di queste inesattezze ne potremmo ci
+                              
+                              <div class="line_b"></div>tare altre anche più gravi, se fosse ufficio nostro di scrivere
+                              
+                              <div class="line_b"></div>invece di una- bibliografia un 
+                              <lingua_straniera class="foreign">errata-corrige</lingua_straniera> : dobbiamo però
+                              
+                              <div class="line_b"></div>aggiungere che nessuna ci <span class="abbreviazioni">par</span><span class="estensioni"> pare</span> tale che possa dare ai bam
+                              
+                              <div class="line_b"></div>bini un concetto falso delle cose nè offendere neppure lon
+                              
+                              <div class="line_b"></div>tanamente ed indirettamente il loro senso morale; onde non
+                              
+                              <div class="line_b"></div>esiteremmo a consigliare quest’operetta come libro di testo
+                              
+                              <div class="line_b"></div>per la lettura nelle scuole popolari se fosse scritta con quel
+                              
+                              <div class="line_b"></div>l’ordine che questi libri richiedono. Essi devono cominciare
+                              
+                              <div class="line_b"></div>da ciò che è più semplice e più facile e passare poi gra
+                              
+                              <div class="line_b"></div>datamente a ciò che è più difficile per l’intelligenza dei fan
+                              
+                              <div class="line_b"></div>ciulli, con frequenti ritorni sopra le cose dette per rinfre
+                              
+                              <div class="line_b"></div>scarne la memoria ed allargarne la cognizione. In questo
+                              
+                              <div class="line_b"></div>i libri inglesi sono veramente ottimi modelli. Invece la si
+                              
+                              <div class="line_b"></div>gnora <span class="person"><a href="">Conti</a></span><span class="info"><br><strong>Nome: </strong>
+                                 Conti
+                                 <br><strong>Professione: </strong>Educatrice<br></span> ama meglio di parlare dei fenomeni naturali al
+                              
+                              <div class="line_b"></div><span class="errori">lort)</span><span class="correzioni"> loro</span> tempo, della neve e dei ghiacci nell’inverno e nella
+                              
+                              <div class="line_b"></div>primavera dei fiori, e degli uomini benemeriti della patria
+                              
+                              <div class="line_b"></div>e dell’umanità quando ricorre l’anniversario della loro na
+                              </div>
+                        </div>
+                     </div>
+                  </td>
+                  <td>
+                     <div class="col_dx">
+                        <div class="paragraph"><span id="p364_p6_cb"><strong>p364_p6_cb</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>scita o della loro morte, e delle virtù in quei giorni che
+                              
+                              <div class="line_b"></div>l’esempio del vizio opposto diventa per antiche consuetu
+                              
+                              <div class="line_b"></div>dini più generale e potente. E anche questo è un sistema
+                              
+                              <div class="line_b"></div>che ha i suoi vantaggi. Se non serve a fare un libro di te
+                              
+                              <div class="line_b"></div>sto per le scuole, può servire benissimo a fare <span class="abbreviazioni">pei</span><span class="estensioni"> per i</span> bambini
+                              
+                              <div class="line_b"></div>un libro di lettura domestica molto utile ed attraente. Chi
+                              
+                              <div class="line_b"></div>ne vuole una prova legga i due volumetti di cui ci siamo
+                              
+                              <div class="line_b"></div>oggi occupati.
+                              </div>
+                        </div>
+                     </div>
+                  </td>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <div class="container">
+         <div class="page"><img src="img_progetto_cod/scienze_geografiche.png" usemap="#p383" alt="Immagine_p383" class="facsimile"><map name="p383"><area id="p383_title" coords="188,103,355,124"><area id="p383_p1" coords="55,126,489,163"><area id="p383_p2" coords="53,163,492,596"><area id="p383_p3" coords="53,599,496,1352"><area id="p383_bibl" coords="75,1361,229,1377"><area id="p383_p5_cb" coords="505,108,942,277"><area id="p383_p6" coords="506,279,946,444"></map><table class="colonne">
+               <tbody>
+                  <tr>
+                     <th class="colonna_1">colonna 1</th>
+                     <th class="colonna_2">colonna 2</th>
+                  </tr>
+                  <td>
+                     <div class="col_sx">
+                        <div class="title"><span id="p383_title"><strong>p383_title</strong></span><div class="title_apply">
+                              
+                              <div class="line_b"></div>scienze geografiche
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p383_p1"><strong>p383_p1</strong></span><div class="anonymous_block">
+                              
+                              
+                              <div class="line_b"></div>
+                              
+                              
+                              L.
+                              Bazzigalupi
+                              
+                              
+                              
+                              <span class="errori">Itogli</span><span class="correzioni"> Fogli</span> d’<span class="errori">esercisio</span><span class="correzioni"> esercizio</span> <span class="abbreviazioni">pel</span><span class="estensioni"> per i</span>  disegno geografico nelle
+                              scuole. 
+                                  
+                              Firenze,
+                              
+                              G. B, Paravia e C., 
+                              
+                              <span class="date">1878</span>           
+                              
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p383_p2"><strong>p383_p2</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Siamo pronti a far buon viso a qualunque tentativo, il
+                              
+                              <div class="line_b"></div>quale accenni di voler aiutare il progresso dell’insegna
+                              
+                              <div class="line_b"></div>mento geografico nelle nostre scuole. Insegnamento che tutti
+                              
+                              <div class="line_b"></div>s’accordano a dire di grandissima importanza ; e che, in onta
+                              
+                              <div class="line_b"></div>a questa concordia, giace trascuratissimo, od è almanco dei
+                              
+                              <div class="line_b"></div>peggio ordinati ; per colpa anche dei programmi ufficiali, che
+                              
+                              <div class="line_b"></div>in questa parte si mostrano difettosi e sconclusionati quanto
+                              
+                              <div class="line_b"></div>mai. E sì che agli insegnanti non mancherebbe il desiderio
+                              
+                              <div class="line_b"></div>del meglio. Ce n’è prova la maggior cura che <span class="abbreviazioni">vien</span><span class="estensioni"> viene</span> data, da
+                              
+                              <div class="line_b"></div>qualche tempo, alle esercitazioni grafiche ; accompagnamento
+                              
+                              <div class="line_b"></div>utilissimo non solo, ma propriamente indispensabile all’in
+                              
+                              <div class="line_b"></div>segnamento orale. Per conto nostro  almanco siamo d’avviso,
+                              
+                              <div class="line_b"></div>che l’insegnamento della geografia, nelle scuole secondarie,
+                              
+                              <div class="line_b"></div>avrebbe raggiunto il suo scopo, quando il giovane avesse
+                              
+                              <div class="line_b"></div>preso abilità di riprodurre (e fosse pure mediocremente) una
+                              
+                              <div class="line_b"></div>carta; <span class="abbreviazioni">ch’</span><span class="estensioni"> che</span>è quanto dire di <span class="abbreviazioni">saper</span><span class="estensioni"> sapere</span> leggere con abbastanza
+                              
+                              <div class="line_b"></div>sagacia nell’ atlante o nelle mappe che gli stanno davanti.
+                              
+                              <div class="line_b"></div>Capacità che tutti credono di avere, ma che in effetto è
+                              
+                              <div class="line_b"></div>delle più difficili e delle più rare a possedersi. Gli è con
+                              
+                              <div class="line_b"></div>quel mezzo principalmente che l’ insegnamento s’ adatta
+                              
+                              <div class="line_b"></div>anch’esso ai dettami del metodo positivo ; gli è con quel
+                              
+                              <div class="line_b"></div>mezzo che la geografia, da mero oggetto di memoria, può
+                              
+                              <div class="line_b"></div>elevarsi ad educatrice del raziocinio.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p383_p3"><strong>p383_p3</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Di carte mute, da servire agli esercizi grafici dei gio
+                              
+                              <div class="line_b"></div>vinetti, ne furono in questi ultimi anni apprestate parec
+                              
+                              <div class="line_b"></div>chie da editori di <span class="place"><a href="">Torino</a></span><span class="info"><br><strong>Posto: </strong>Torino<br><strong>Località: </strong>Italia,Europa<br></span>, <span class="place"><a href="">Milano</a></span><span class="info"><br><strong>Posto: </strong>Milano<br><strong>Località: </strong>Italia,Europa<br></span> e <span class="place"><a href="">Firenze</a></span><span class="info"><br><strong>Posto: </strong>Firenze<br><strong>Località: </strong>Italia,Europa<br></span>. Ora la ditta
+                              
+                              <div class="line_b"></div><span class="Org"><a href="">Paravia</a></span><span class="info"><br><strong>Nome azienda: </strong>Paravia<br><br><strong>Nascita azienda: </strong>1802<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Paravia">https://it.wikipedia.org/wiki/Paravia<br></a></span> ci fa tenere tre carte : dell’<span class="place"><a href=""> Italia </a></span><span class="info"><br><strong>Posto: </strong>Italia<br><strong>Località: </strong>Europa<br></span>, dell’<span class="place"><a href=""> Europa </a></span><span class="info"><br><strong>Posto: </strong>Europa<br><strong>Località: </strong><br></span> e dei
+                              
+                              <div class="line_b"></div>due Emisferi, compilate dal <span class="abbreviazioni">signor</span><span class="estensioni"> signore</span> <span class="person"><a href="">L. Bazzigalupi</a></span><span class="info"><br><strong>Nome: </strong>
+                                 L.
+                                 Bazzigalupi
+                                 <br><strong>Professione: </strong>cartografo<br></span> di <span class="place"><a href="">Vige- 
+                                    
+                                    <div class="line_b"></div>vano</a></span><span class="info"><br><strong>Posto: </strong>Vigevano<br><strong>Località: </strong>Italia,Europa<br></span>, per servire di fogli alle esercitazioni grafiche, e col
+                              
+                              <div class="line_b"></div>l’intendimento che a queste debbano seguirne altre consi
+                              
+                              <div class="line_b"></div>mili. Le nuove carte segnano certamente un progresso me
+                              
+                              <div class="line_b"></div>todico rispetto a ciò che si usava o si faceva comunemente
+                              
+                              <div class="line_b"></div>nelle nostre scuole. E cosa molto opportuna che sul foglio
+                              
+                              <div class="line_b"></div>dove sta il reticolato della carta da disegnare, sia propo
+                              
+                              <div class="line_b"></div>sto il modello in dimensioni minori ; ed è similmente com
+                              
+                              <div class="line_b"></div>mendevole la distinzione per bacini o versanti che fu os
+                              
+                              <div class="line_b"></div>servata nei modelli. Con tutto ciò non vorremmo <span class="errori">dire1che</span><span class="correzioni"> dire che</span>
+                              
+                              <div class="line_b"></div>il <span class="abbreviazioni">signor</span><span class="estensioni"> signore</span> <span class="person"><a href="">Bazzigalupi</a></span><span class="info"><br><strong>Nome: </strong>
+                                 L.
+                                 Bazzigalupi
+                                 <br><strong>Professione: </strong>cartografo<br></span> abbia saputo soddisfare ad ogni esi
+                              
+                              <div class="line_b"></div>genza didattica. Le sue carte domandano agli alunni delle
+                              
+                              <div class="line_b"></div>classi inferiori un’abilità d’occhio e di mano che non pos-
+                              
+                              <div class="line_b"></div>sono avere; mentre per quelli delle classi superiori lasciano
+                              
+                              <div class="line_b"></div>desiderio di una giusta gradazione costruttiva.Si osservi
+                              
+                              <div class="line_b"></div>il metodo proposto dal <span class="person"><a href="">Sydow</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Emily von
+                                 Sydow
+                                 <br><strong>Nascita: </strong>
+                                 15/07/1812
+                                 <br><strong>Morte: </strong>
+                                 13/10/1873
+                                 <br><strong>Professione: </strong>Geografo<br><strong>Link: </strong><a href="https://en.wikipedia.org/wiki/Emil_von_Sydow">https://en.wikipedia.org/wiki/Emil_von_Sydow<br></a></span> in principio<span class="abbreviazioni">a’</span><span class="estensioni"> ai</span> suoi due at
+                              
+                              <div class="line_b"></div>lanti reticolato ed idrografico ; si legga quello che ebbe a
+                              
+                              <div class="line_b"></div>consigliare su tale argomento il prof.<span class="estensioni"> professore</span> <span class="person"><a href="">Malfatti</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Bartolomeo
+                                 Malfatti
+                                 <br><strong>Nascita: </strong>
+                                 25/02/1828
+                                 <br><strong>Morte: </strong>
+                                 15/01/1892
+                                 <br><strong>Professione: </strong>Geografo<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Bartolomeo_Malfatti">https://it.wikipedia.org/wiki/Bartolomeo_Malfatti<br></a></span> nella sua
+                              
+                              <div class="line_b"></div>Memoria : <span class="bibliografia"><a href="">Delle Carte geografiche da eseguire nelle scuole secon-
+                                    
+                                    <div class="line_b"></div>darie *</a></span><span class="info"><br><strong>Titolo: </strong>Delle Carte geografiche da eseguire nelle scuole secondarie<br><strong>Autore: </strong>Bartolomeo Malfatti<br></span> e si vedrà, che <span class="errori">1’</span><span class="correzioni"> l'</span> autore delle nuove carte presup
+                              
+                              <div class="line_b"></div>pone da un lato una pratica grafica, che non può esser
+                              
+                              <div class="line_b"></div>posseduta dagli alunni de’ nostri ginnasi ; e d’altro lato
+                              
+                              <div class="line_b"></div>lascia mancare agli scolari più adulti quei fondamenti di
+                              
+                              <div class="line_b"></div>costruzione (sia geometrica, sia anche semplicemente li
+                              
+                              <div class="line_b"></div>neare) che si possono richiedere da essi, anche usando la 
+                              
+                              <div class="line_b"></div>maggiore discrezione; fondamenti necessari acciò che l’eser
+                              
+                              <div class="line_b"></div>cizio tecnico sia insieme esercizio del criterio ; e di cui tro
+                              
+                              <div class="line_b"></div>viamo tanti esempi od elementi nei modelli esibitici, oltre
+                              
+                              <div class="line_b"></div>che dal <span class="person"><a href="">Sydow</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Emily von
+                                 Sydow
+                                 <br><strong>Nascita: </strong>
+                                 15/07/1812
+                                 <br><strong>Morte: </strong>
+                                 13/10/1873
+                                 <br><strong>Professione: </strong>Geografo<br><strong>Link: </strong><a href="https://en.wikipedia.org/wiki/Emil_von_Sydow">https://en.wikipedia.org/wiki/Emil_von_Sydow<br></a></span>, dal <span class="person"><a href="">Lohse</a></span><span class="info"><br><strong>Nome: </strong>
+                                 Lohse
+                                 <br><strong>Professione: </strong>cartografo<br></span>, dall’ <span class="person"><a href="">Oppermann</a></span><span class="info"><br><strong>Nome: </strong>
+                                 Oppermann
+                                 <br><strong>Professione: </strong>cartografo<br></span>, dallo <span class="person"><a href="">Ziegler</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 jacob
+                                 Ziegler
+                                 <br><strong>Nascita: </strong>
+                                 1470/71
+                                 <br><strong>Morte: </strong>
+                                 1549
+                                 <br><strong>Professione: </strong>cartografo<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Jacob_Ziegler">https://it.wikipedia.org/wiki/Jacob_Ziegler<br></a></span>,
+                              
+                              <div class="line_b"></div>dal <span class="person"><a href="">Vogel</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 karl
+                                 Vogel
+                                 <br><strong>Nascita: </strong>
+                                 1828
+                                 <br><strong>Morte: </strong>
+                                 1897
+                                 <br><strong>Professione: </strong>cartografo<br><strong>Link: </strong><a href="https://commons.wikimedia.org/wiki/Category:Carl_Vogel">https://commons.wikimedia.org/wiki/Category:Carl_Vogel<br></a></span> e dal <span class="person"><a href="">Delitsch</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Otto
+                                 Delitsch
+                                 <br><strong>Nascita: </strong>
+                                 05/03/1821
+                                 <br><strong>Morte: </strong>
+                                 15/09/1882
+                                 <br><strong>Professione: </strong>cartografo<br><strong>Link: </strong><a href="https://de.wikipedia.org/wiki/Otto_Delitsch">https://de.wikipedia.org/wiki/Otto_Delitsch<br></a></span>, dal <span class="person"><a href="">Klòden</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Karl Friedrich von
+                                 Klöden
+                                 <br><strong>Nascita: </strong>
+                                 21/05/1786
+                                 <br><strong>Morte: </strong>
+                                 09/01/1856
+                                 <br><strong>Professione: </strong>cartografo<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Karl_Friedrich_von_Kl%C3%B6den">https://it.wikipedia.org/wiki/Karl_Friedrich_von_Kl%C3%B6den<br></a></span>, dal <span class="person"><a href="">Dronke</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Ernst Friedrich Johann
+                                 Dronke
+                                 <br><strong>Nascita: </strong>
+                                 28/06/1797
+                                 <br><strong>Morte: </strong>
+                                 10/12/1849
+                                 <br><strong>Professione: </strong>educatore<br><strong>Link: </strong><a href="https://en.wikipedia.org/wiki/Ernst_Friedrich_Johann_Dronke">https://en.wikipedia.org/wiki/Ernst_Friedrich_Johann_Dronke<br></a></span>. Ma que
+                              
+                              <div class="line_b"></div>sti ed altri simili lavori, di cui abbonda la <span class="place"><a href="">Germania</a></span><span class="info"><br><strong>Posto: </strong>Germania<br><strong>Località: </strong>Europa<br></span>, sono
+                              
+                              <div class="line_b"></div>pur troppo ignorati dai nostri pedagoghi e istruttori. Ep
+                              
+                              <div class="line_b"></div>pure bisognerà che tenga conto di quegli ammaestramenti chi '
+                              
+                              <div class="line_b"></div>voglia che l’insegnamento geografico fra noi non abbia a
+                              
+                              <div class="line_b"></div>proceder tentone, come (salvo rare eccezioni) è <span class="errori">canfminato</span><span class="correzioni"> camminato</span>
+                              
+                              <div class="line_b"></div>sin qui ; chi voglia instaurarlo in modo analogo a quello che
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p383_bibl"><strong>p383_bibl</strong></span><div class="anonymous_block">
+                              
+                              
+                              <div class="line_b"></div>*Milano,Brigola,<span class="date">1873</span>.    
+                              
+                              </div>
+                        </div>
+                     </div>
+                  </td>
+                  <td>
+                     <div class="col_dx">
+                        <div class="paragraph"><span id="p383_p5_cb"><strong>p383_p5_cb</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>fu accolto ormai per altre discipline ; per la filologia ad
+                              
+                              <div class="line_b"></div>esempio. A chi s’interessa dell’argomento, raccomanderemo
+                              
+                              <div class="line_b"></div>anche il recente scritto del <span class="person"><a href="">Delitsch</a></span><span class="info"><br><strong>Nome: </strong>
+                                 
+                                 Otto
+                                 Delitsch
+                                 <br><strong>Nascita: </strong>
+                                 05/03/1821
+                                 <br><strong>Morte: </strong>
+                                 15/09/1882
+                                 <br><strong>Professione: </strong>cartografo<br><strong>Link: </strong><a href="https://de.wikipedia.org/wiki/Otto_Delitsch">https://de.wikipedia.org/wiki/Otto_Delitsch<br></a></span> : <span class="bibliografia"><a href="">Beitrage zur Methodik-
+                                    
+                                    <div class="line_b"></div> des geographischen Unterrichts</a></span><span class="info"><br><strong>Titolo: </strong>Beitrage zur Methodik des geographischen Unterrichts<br><strong>Autore: </strong>Otto Delitsch<br><strong>Anno: </strong>1878<br></span>(<span class="place"><a href="">Lipsia </a></span><span class="info"><br><strong>Posto: </strong>Lipsia<br><strong>Località: </strong>Germania,Europa<br></span>e <span class="place"><a href="">Vienna</a></span><span class="info"><br><strong>Posto: </strong>Vienna<br><strong>Località: </strong>Austria,Europa<br></span>; <span class="editore">Klinkhardl</span>,
+                              
+                              <div class="line_b"></div><span class="date">1878</span>) ; scorrendo il quale potrà persuadersi dell’importanza
+                              
+                              <div class="line_b"></div>capitale che ha nelle scuole la lettura e il disegno delle
+                              
+                              <div class="line_b"></div>carte ; e potrà misurare insieme quanto le nostre scuole se
+                              
+                              <div class="line_b"></div>condarie sieno lontane, anche in questa parte, dal segno che
+                              
+                              <div class="line_b"></div>pur altrove fu toccato.
+                              </div>
+                        </div>
+                        <div class="paragraph"><span id="p383_p6"><strong>p383_p6</strong></span><div class="anonymous_block">
+                              
+                              <div class="line_b"></div>Ma, come abbiamo detto in principio, noi non siamo di
+                              
+                              <div class="line_b"></div>quelli che, in grazia della perfezione, vogliano <span class="abbreviazioni">chiuder</span><span class="estensioni"> chiudere</span> gli
+                              
+                              <div class="line_b"></div>occhi su ciò che segna pure un grado meno imperfetto. E
+                              
+                              <div class="line_b"></div>tale grado pare raggiunto a noi dalle carte del <span class="abbreviazioni">signor</span><span class="estensioni"> signore</span> <span class="person"><a href="">Baz-
+                                    
+                                    <div class="line_b"></div>zigalupi</a></span><span class="info"><br><strong>Nome: </strong>
+                                 L.
+                                 Bazzigalupi
+                                 <br><strong>Professione: </strong>cartografo<br></span>; il quale, se vorrà tener conto delle esperienze che
+                              
+                              <div class="line_b"></div>da oltre mezzo secolo ebbero a raccogliere tanti insigni
+                              
+                              <div class="line_b"></div>maestri, potrà dare senza fallo un indirizzo ancora più ra
+                              
+                              <div class="line_b"></div>zionale ed efficace a quelle esercitazioni grafiche che sarà
+                              
+                              <div class="line_b"></div>per pubblicare in seguito.
+                              </div>
+                        </div>
+                     </div>
+                  </td>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <div class="container">
+         <div class="page"><img src="img_progetto_cod/notizie_2.png" usemap="#p400" alt="Immagine_p400" class="facsimile"><map name="p400"><area id="p400_title" coords="704,1062,791,1082"><area id="p400_p1" coords="533,1082,956,1151"><area id="p400_p2" coords="534,1151,957,1266"></map><table class="colonne">
+               <tbody>
+                  <tr>
+                     <th class="colonna_1">colonna 1</th>
+                     <th class="colonna_2">colonna 2</th>
+                  </tr>
+                  <td>
+                     <div class="col_sx"></div>
+                  </td>
+                  <td>
+                     <div class="col_dx"><span class="elenco"><br><div class="title"><span id="p400_title"><strong>p400_title</strong></span><div class="title_apply">
+                                 
+                                 <div class="line_b"></div>NOTIZIE 
+                                 </div>
+                           </div>
+                           <div class="paragraph"><span id="p400_p1"><strong>p400_p1</strong></span><div class="component_list">
+                                 
+                                 <div class="line_b"></div>— Il prof.<span class="estensioni"> professore</span> <span class="person"><a href=""> Nordonskjöld</a></span>, duranto il suo recente viaggio nello <span class="regione">re-
+                                    
+                                    <div class="line_b"></div>gioni artiche</span>, fece alcuni importanti acquisti di «idoli» dai Samojedi
+                                 
+                                 <div class="line_b"></div>cristianizzati, i quali, nonostante il loro battesimo, prestano culto e
+                                 
+                                 <div class="line_b"></div>sagrificano  alle loro antiche divinità. (<span class="errori">N ature</span><span class="correzioni"> Nature</span>)
+                                 </div>
+                           </div>
+                           <div class="paragraph"><span id="p400_p2"><strong>p400_p2</strong></span><div class="component_list">
+                                 
+                                 <div class="line_b"></div>— Ad istigazione della <span class="Org"><a href="">Società per la Storia del Lago di Costanza </a></span><span class="info"><br><strong>Nome azienda: </strong>Società per la Storia del Lago di Costanza<br><br><strong>Nascita azienda: </strong>1868<br><strong>Link: </strong><a href=""><br></a></span>
+                                 
+                                 <div class="line_b"></div>e suoi dintorni ec.<span class="estensioni"> eccettera</span>, il re di <span class="place"><a href="">Wurtemberg</a></span><span class="info"><br><strong>Posto: </strong>Wurtemberg<br><strong>Località: </strong>Germania,Europa<br></span> ha invitato l ’ ufficio di Stati
+                                 
+                                 <div class="line_b"></div>stica e topografia di <span class="place"><a href=""><span class="errori">S tuttgart</span><span class="correzioni"> Stuttgart</span></a></span><span class="info"><br><strong>Posto: </strong>Stuttgart<br><strong>Località: </strong>Germania,Europa<br></span> di intraprendere una compiuta investi
+                                 
+                                 <div class="line_b"></div>gazione del lago medesimo. Sembra <span class="errori">elio</span><span class="correzioni"> che</span> le varie profondità delle diffe
+                                 
+                                 <div class="line_b"></div>renti parti del lago non sieno state misurate dal <span class="date"><span class="errori">18-26</span><span class="correzioni"> 1826</span></span>. Si crede che lo
+                                 
+                                 <div class="line_b"></div>nuove ricerche produrranno una quantità di dati molto importanti.
+                                 
+                                 <div class="line_b"></div>(<span class="errori">Watiire</span><span class="correzioni"> Nature</span>)
+                                 </div>
+                           </div></span></div>
+                  </td>
+               </tbody>
+            </table>
+         </div>
+         <div class="page"><img src="img_progetto_cod/notizie_1.png" usemap="#p152" alt="Immagine_p152" class="facsimile"><map name="p152"><area id="p152_title" coords="689,952,781,977"><area id="p152_p1" coords="517,974,948,1026"><area id="p152_p2" coords="518,1026,947,1092"><area id="p152_p3" coords="518,1092,948,1198"><area id="p152_p4" coords="518,1198,951,1269"></map><table class="colonne">
+               <tbody>
+                  <tr>
+                     <th class="colonna_1">colonna 1</th>
+                     <th class="colonna_2">colonna 2</th>
+                  </tr>
+                  <td>
+                     <div class="col_sx"></div>
+                  </td>
+                  <td>
+                     <div class="col_dx"><span class="elenco"><br><div class="title"><span id="p152_title"><strong>p152_title</strong></span><div class="title_apply">
+                                 
+                                 <div class="line_b"></div>NOTIZIE 
+                                 </div>
+                           </div>
+                           <div class="paragraph"><span id="p152_p1"><strong>p152_p1</strong></span><div class="component_list">
+                                 
+                                 <div class="line_b"></div>— Fra alcuni giorni sarà pubblicato dalla libreria <span class="editore">Alessandro <span class="errori">M anzoni </span><span class="correzioni"> Man-
+                                       
+                                       <div class="line_b"></div>zoni</span></span>di <span class="place"><a href="">Roma</a></span><span class="info"><br><strong>Posto: </strong>Roma<br><strong>Località: </strong>Italia,Europa<br></span>  uno scritto col titolo : <span class="bibliografia"><a href="https://www.google.it/books/edition/Raccogliamoci/ZgPr-JyEXcMC?hl=engbpv=1"><span class="errori">Raccogliam oci 1</span><span class="correzioni"> Raccogliamoci!</span></a></span><span class="info"><br><strong>Titolo: </strong>Raccogliamoci!<br><strong>Autore: </strong>Nicolo Marselli<br><strong>Anno: </strong>1878<br><strong>Link: </strong><a href="https://www.google.it/books/edition/Raccogliamoci/ZgPr-JyEXcMC?hl=engbpv=1">https://www.google.it/books/edition/Raccogliamoci/ZgPr-JyEXcMC?hl=engbpv=1<br></a></span> dell’ on.<span class="estensioni"> onorevole</span> deputato
+                                 
+                                 <div class="line_b"></div><span class="person"><a href="">Niccola Marselli</a></span><span class="info"><br><strong>Nome: </strong>
+                                    
+                                    Niccola
+                                    Marselli
+                                    <br><strong>Nascita: </strong>
+                                    05/10/1832
+                                    <br><strong>Morte: </strong>
+                                    26/04/1899
+                                    <br><strong>Professione: </strong>politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Nicola_Marselli">https://it.wikipedia.org/wiki/Nicola_Marselli<br></a></span>, che tratterà questioni di politica estera ed interna
+                                 </div>
+                           </div>
+                           <div class="paragraph"><span id="p152_p2"><strong>p152_p2</strong></span><div class="component_list">
+                                 
+                                 <div class="line_b"></div> — Il <span class="abbreviazioni">dottor</span><span class="estensioni"> dottore</span> <span class="person"><a href="">Pope</a></span><span class="info"><br><strong>Nome: </strong>
+                                    
+                                    Otto
+                                    Posse
+                                    <br><strong>Nascita: </strong>
+                                    29/07/1847
+                                    <br><strong>Morte: </strong>
+                                    13/10/1899
+                                    <br><strong>Professione: </strong>archivista<br><strong>Link: </strong><a href="https://de.wikipedia.org/wiki/Otto_Posse">https://de.wikipedia.org/wiki/Otto_Posse<br></a></span> di <span class="place"><a href="">Dresda</a></span><span class="info"><br><strong>Posto: </strong>Dresda<br><strong>Località: </strong>Germania,Europa<br></span> pubblicherà fra breve un’ opera intito
+                                 
+                                 <div class="line_b"></div>lata: <span class="bibliografia"><a href="https://archive.org/details/analectavaticana00poss/page/78/mode/2up"><span class="errori">Analecta V aticana</span><span class="correzioni"> Analecta Vaticana</span></a></span><span class="info"><br><strong>Titolo: </strong>Analecta Vaticana<br><strong>Autore: </strong>Otto Posse<br><strong>Anno: </strong>1878<br><strong>Link: </strong><a href="https://archive.org/details/analectavaticana00poss/page/78/mode/2up">https://archive.org/details/analectavaticana00poss/page/78/mode/2up<br></a></span> che formerà una collezione di estratti da do
+                                 
+                                 <div class="line_b"></div>cumenti inediti esistenti nelle biblioteche di <span class="place"><a href="">Roma</a></span><span class="info"><br><strong>Posto: </strong>Roma<br><strong>Località: </strong>Italia,Europa<br></span> che si riferiscono
+                                 
+                                 <div class="line_b"></div>alla storia dei Papi
+                                 </div>
+                           </div>
+                           <div class="paragraph"><span id="p152_p3"><strong>p152_p3</strong></span><div class="component_list">
+                                 
+                                 <div class="line_b"></div>— Si annunzia la prossima <span class="errori">pubbljcazione</span><span class="correzioni"> pubblicazione</span> di una biografia del cele
+                                 
+                                 <div class="line_b"></div>bre naturalista russo <span class="person"><a href="">von Baer</a></span><span class="info"><br><strong>Nome: </strong>
+                                    
+                                    Karl von
+                                    Baer
+                                    <br><strong>Nascita: </strong>
+                                    29/07/1847
+                                    <br><strong>Morte: </strong>
+                                    16/11/1876
+                                    <br><strong>Professione: </strong>geografo<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Karl_von_Baer">https://it.wikipedia.org/wiki/Karl_von_Baer<br></a></span>, scritta dal dottore <span class="person"><a href="">Stida</a></span><span class="info"><br><strong>Nome: </strong>
+                                    Stida
+                                    <br><strong>Professione: </strong>professore<br></span>, Professore
+                                 
+                                 <div class="line_b"></div>all’Università di <span class="place"><a href="">Dorpat</a></span><span class="info"><br><strong>Posto: </strong>Dorpat<br><strong>Località: </strong>Estonia,Europa<br></span>. L’autobiografia del <span class="person"><a href="">Baer</a></span><span class="info"><br><strong>Nome: </strong>
+                                    
+                                    Karl von
+                                    Baer
+                                    <br><strong>Nascita: </strong>
+                                    29/07/1847
+                                    <br><strong>Morte: </strong>
+                                    16/11/1876
+                                    <br><strong>Professione: </strong>geografo<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Karl_von_Baer">https://it.wikipedia.org/wiki/Karl_von_Baer<br></a></span> uscì qualche anno
+                                 
+                                 <div class="line_b"></div>prima della sua morte e conteneva solamente la storia della sua infanzia
+                                 
+                                 <div class="line_b"></div>e gioventù. L’ opera dello <span class="person"><a href="">Stida</a></span><span class="info"><br><strong>Nome: </strong>
+                                    Stida
+                                    <br><strong>Professione: </strong>professore<br></span> è consacrata principalmente alla vita
+                                 
+                                 <div class="line_b"></div>scientifica di <span class="person"><a href="">Baer</a></span><span class="info"><br><strong>Nome: </strong>
+                                    
+                                    Karl von
+                                    Baer
+                                    <br><strong>Nascita: </strong>
+                                    29/07/1847
+                                    <br><strong>Morte: </strong>
+                                    16/11/1876
+                                    <br><strong>Professione: </strong>geografo<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Karl_von_Baer">https://it.wikipedia.org/wiki/Karl_von_Baer<br></a></span> e contiene una rassegna completa delle sue opere.
+                                 </div>
+                           </div>
+                           <div class="paragraph"><span id="p152_p4"><strong>p152_p4</strong></span><div class="component_list">
+                                 
+                                 <div class="line_b"></div>— Presso Schleiermacher a <span class="place"><a href="">Berlino</a></span><span class="info"><br><strong>Posto: </strong>Berlino<br><strong>Località: </strong>Germania,Europa<br></span> è uscito un libro di <span class="person"><a href="">A. Klein-
+                                       
+                                       <div class="line_b"></div>schmidt</a></span><span class="info"><br><strong>Nome: </strong>
+                                    
+                                    Arthur
+                                    Kleinschmidt
+                                    <br><strong>Nascita: </strong>
+                                    08/04/1848
+                                    <br><strong>Morte: </strong>
+                                    05/08/1919
+                                    <br><strong>Professione: </strong>storico<br><strong>Link: </strong><a href="https://de.wikipedia.org/wiki/Arthur_Kleinschmidt">https://de.wikipedia.org/wiki/Arthur_Kleinschmidt<br></a></span> sui <span class="errori">P arenti</span><span class="correzioni"> Parenti</span>e i <span class="errori">fr a te lli d i</span><span class="correzioni"> fratelli di</span> <span class="person"><a href=""> <span class="errori">N apoleone I</span><span class="correzioni"> Napoleone I</span> </a></span><span class="info"><br><strong>Nome: </strong>
+                                    
+                                    Napoleone
+                                    Bonaparte
+                                    <br><strong>Nascita: </strong>
+                                    15/08/1769
+                                    <br><strong>Morte: </strong>
+                                    05/05/1821
+                                    <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Napoleone_Bonaparte">https://it.wikipedia.org/wiki/Napoleone_Bonaparte<br></a></span> che dà delle informazioni
+                                 
+                                 <div class="line_b"></div>interessanti specialmente sulla madre di <span class="person"><a href="">Napoleone I</a></span><span class="info"><br><strong>Nome: </strong>
+                                    
+                                    Napoleone
+                                    Bonaparte
+                                    <br><strong>Nascita: </strong>
+                                    15/08/1769
+                                    <br><strong>Morte: </strong>
+                                    05/05/1821
+                                    <br><strong>Professione: </strong>Politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Napoleone_Bonaparte">https://it.wikipedia.org/wiki/Napoleone_Bonaparte<br></a></span>, <span class="person"><a href="">Letizia</a></span><span class="info"><br><strong>Nome: </strong>
+                                    
+                                    Maria Letizia
+                                    Ramolino
+                                    <br><strong>Nascita: </strong>
+                                    24/08/1749
+                                    <br><strong>Morte: </strong>
+                                    02/02/1836
+                                    <br><strong>Professione: </strong>nobildonna<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Maria_Letizia_Ramolino">https://it.wikipedia.org/wiki/Maria_Letizia_Ramolino<br></a></span> (che morì
+                                 
+                                 <div class="line_b"></div>a <span class="place"><a href="">Roma</a></span><span class="info"><br><strong>Posto: </strong>Roma<br><strong>Località: </strong>Italia,Europa<br></span> nel <span class="date">1836</span>) e su <span class="person"><a href="">Luciano Bonaparte</a></span><span class="info"><br><strong>Nome: </strong>
+                                    
+                                    Luciano
+                                    Bonaparte
+                                    <br><strong>Nascita: </strong>
+                                    21/05/1775
+                                    <br><strong>Morte: </strong>
+                                    29/06/1840
+                                    <br><strong>Professione: </strong>politico<br><strong>Link: </strong><a href="https://it.wikipedia.org/wiki/Luciano_Bonaparte">https://it.wikipedia.org/wiki/Luciano_Bonaparte<br></a></span>.
+                                 </div>
+                           </div></span></div>
+                  </td>
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </body>
+</html>
